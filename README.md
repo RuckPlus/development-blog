@@ -1,23 +1,20 @@
 # SmartContract Templates
 
+スマートコントラクトのテンプレート集
+
+## Overview
+
+### ERC20 Template
+
+ERC20のテンプレートです。
+
+#### 特徴
+
+- decimalsのカスタマイズ
+- mint関数の追加
+
 ## Installation
 
 ```bash
 yarn install
-```
-
-## Usage
-
-### ERC20 Template
-
-```bash
-hoge
-```
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
 ```

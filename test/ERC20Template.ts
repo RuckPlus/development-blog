@@ -1,5 +1,4 @@
-import { time, loadFixture } from "@nomicfoundation/hardhat-network-helpers";
-import { anyValue } from "@nomicfoundation/hardhat-chai-matchers/withArgs";
+import { loadFixture } from "@nomicfoundation/hardhat-network-helpers";
 import { expect } from "chai";
 import { ethers } from "hardhat";
 
@@ -18,11 +17,11 @@ describe("ERC20Template", () => {
 
   describe("Functions: mint", () => {
     describe("Success", () => {
-      it("発行された通貨が、残高に反映されていること", async () => {  
+      it("発行された通貨が、残高に反映されること", async () => {  
         const { contract, account1 } = await loadFixture(deployFixture);
 
         const mintAmount = ethers.BigNumber.from(1000000);
-        await contract.mint(account1.address, mintAmount)
+        await contract.mint(account1.address, mintAmount);
   
         expect(await contract.balanceOf(account1.address)).to.equal(mintAmount);
       });

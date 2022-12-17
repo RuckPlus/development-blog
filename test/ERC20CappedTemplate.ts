@@ -16,7 +16,7 @@ describe("ERC20CappedTemplate", () => {
   }
 
   describe("Functions: mint", () => {
-    describe("Success", () => {
+    describe("Error", () => {
       it("トークン供給上限を超える額は発行できないこと。", async () => {
         const { contract, owner } = await loadFixture(deployFixture);
 

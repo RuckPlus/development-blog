@@ -17,7 +17,7 @@ describe("ERC20PausableTemplate", () => {
 
   describe("Functions: transfer", () => {
     describe("Error", () => {
-      it("ポーズ中はトークンの転送ができないこと", async () => {
+      it("停止中はトークンの転送ができないこと", async () => {
         const { contract, account1 } = await loadFixture(deployFixture);
 
         await contract.pause();
@@ -28,7 +28,7 @@ describe("ERC20PausableTemplate", () => {
 
   describe("Functions: transferFrom", () => {
     describe("Error", () => {
-      it("ポーズ中はトークンの転送ができないこと", async () => {
+      it("停止中はトークンの転送ができないこと", async () => {
         const { contract, owner, account1 } = await loadFixture(deployFixture);
 
         await contract.pause();
@@ -40,7 +40,7 @@ describe("ERC20PausableTemplate", () => {
 
   describe("Functions: mint", () => {
     describe("Error", () => {
-      it("ポーズ中はミントができないこと", async () => {
+      it("停止中はミントができないこと", async () => {
         const { contract, owner } = await loadFixture(deployFixture);
 
         await contract.pause();

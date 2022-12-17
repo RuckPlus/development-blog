@@ -18,7 +18,7 @@ describe("ERC20BurnableTemplate", () => {
 
   describe("Functions: burn", () => {
     describe("Success", () => {
-      it("指定した額が、オーナーアカウントから破棄されること", async () => {  
+      it("指定した額が、オーナーアカウントから破棄されること", async () => {
         const { contract, owner } = await loadFixture(deployFixture);
 
         const burnAmount = ethers.BigNumber.from('100000000000000000000000000')

@@ -17,7 +17,7 @@ describe("ERC20Template", () => {
 
   describe("Functions: mint", () => {
     describe("Success", () => {
-      it("発行された通貨が、残高に反映されること", async () => {  
+      it("発行された通貨が、残高に反映されること", async () => {
         const { contract, account1 } = await loadFixture(deployFixture);
 
         const mintAmount = ethers.BigNumber.from(1000000);

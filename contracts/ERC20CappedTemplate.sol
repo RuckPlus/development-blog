@@ -7,15 +7,15 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 /// @title ERC20Capped template
 /// @author Kentaro Masuda
 contract ERC20CappedTemplate is ERC20Capped, Ownable {
-    uint8 private _desimals = 18;
-    uint256 private _cap = 100000000 * 10 ** _desimals;
+    uint8 private _decimals = 18;
+    uint256 private _cap = 100000000 * 10 ** _decimals;
 
     constructor() ERC20("RuckCoin", "RCN") ERC20Capped(_cap) {
-        _mint(msg.sender, 100 * 10 ** _desimals);
+        _mint(_msgSender(), 100 * 10 ** _decimals);
     }
 
     function decimals() public view virtual override returns (uint8) {
-        return _desimals;
+        return _decimals;
     }
 
     function mint(address to, uint256 amount) public onlyOwner {

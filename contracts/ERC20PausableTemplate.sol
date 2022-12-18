@@ -7,14 +7,14 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 /// @title ERC20Pausable template
 /// @author Kentaro Masuda
 contract ERC20PausableTemplate is ERC20Pausable, Ownable {
-    uint8 private _desimals = 18;
+    uint8 private _decimals = 18;
 
     constructor() ERC20("RuckCoin", "RCN") {
-        _mint(msg.sender, 100000000 * 10 ** _desimals);
+        _mint(_msgSender(), 100000000 * 10 ** _decimals);
     }
 
     function decimals() public view virtual override returns (uint8) {
-        return _desimals;
+        return _decimals;
     }
 
     function mint(address to, uint256 amount) public onlyOwner {
